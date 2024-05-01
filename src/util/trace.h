@@ -46,7 +46,7 @@ void verbose_unlock();
 
 #endif
 
-
+#define _TRACE
 
 #ifdef _TRACE
 extern std::ofstream tout; 
@@ -59,6 +59,7 @@ bool is_trace_enabled(const char * tag);
 void close_trace();
 void open_trace();
 void finalize_trace();
+void display_tags();
 /*
   ADD_FINALIZER('finalize_trace();')
 */

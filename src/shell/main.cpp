@@ -344,6 +344,14 @@ int STD_CALL main(int argc, char ** argv) {
         parse_cmd_line_args(input_file, argc, argv);
         env_params::updt_params();
 
+        std::cout << "yogurt-shadow" << std::endl;
+        enable_trace("spacer");
+        enable_trace("smt");
+        enable_trace("muz");
+        enable_trace("indgen");
+        display_tags();
+        tout << "yogurt-shadow" << std::endl;
+
         if (g_input_file && g_standard_input) {
             error("using standard input to read formula.");
         }

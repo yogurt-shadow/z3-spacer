@@ -40,7 +40,7 @@ bool is_threaded() {
 
 #ifdef _TRACE
 
-std::ofstream tout(".z3-trace"); 
+std::ofstream tout("trace.z3-trace"); 
 
 static bool g_enable_all_trace_tags = false;
 static str_hashtable* g_enabled_trace_tags = nullptr;
@@ -59,6 +59,13 @@ void finalize_trace() {
 
 void enable_trace(const char * tag) {
     get_enabled_trace_tags().insert(tag);
+}
+
+void display_tags() {
+    std::cout << "enabled tags: " << get_enabled_trace_tags().size() << std::endl;
+    for(auto ele: get_enabled_trace_tags()) {
+        std::cout << ele << std::endl;
+    }
 }
 
 void enable_all_trace(bool flag) {
